@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Error</title>
+    <!-- link to css file -->
+    <link rel="stylesheet" href="./dist/output.css">
+</head>
+<body class="w-screen h-screen">
+    <div class="w-full h-full grid grid-cols-1 md:grid-cols-2 place-content-center place-items-center">
+        <div class="mb-4 md:mb-0 break-all lg:break-normal">
+            <h1 class="text-lg font-semibold md:text-2xl md:font-bold md:mb-2">Oops! Something went wrong!!</h1>
+            <p class="text-sm font-normal md:text-base md:font-medium">Something happened to server! Error Code: 500</p>
+        </div>
+        <!-- max-w-sm md:max-w-md lg:max-w-lg w-96 h-96 -->
+        <div class="self-center">
+            <canvas id="canvas" width="400" height="400"></canvas>
+        </div>
+    </div>
+    <script src="https://unpkg.com/@rive-app/canvas@1.0.98"></script>
+    <script>
+        const riveInstance = new rive.Rive({
+            src: "mars_with_satellite.riv",
+            canvas: document.getElementById("canvas"),
+            artboard: '500',
+            autoplay: true,
+            stateMachines: "error",
+            onLoad: (_) => {
+
+            }
+        });
+    </script>
+</body>
+</html>
